@@ -1,9 +1,10 @@
 import "./App.css";
+import Text from "./components/text";
 
 function App() {
   return (
     <>
-      <h1>Fiscalização de Gastos - Gabriel Canechia</h1>
+      <Text as="h1">Fiscalização de Gastos - Gabriel Canechia</Text>
       <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
         <div style={{ backgroundColor: "blue", flex: 1 }}>
           <ul style={{ listStyleType: "none" }}>
