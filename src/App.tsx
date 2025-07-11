@@ -29,15 +29,16 @@ function App() {
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
+            columnGap: "10px",
           }}
         >
-          <div style={{ backgroundColor: "blue", flex: 1 }}>
-            <ul style={{ listStyleType: "none" }}>
+          <div style={{ backgroundColor: "blue", flex: 1, borderRadius: "8px" }}>
+            <ul style={{ listStyleType: "none", alignContent: "start" }}>
               {mockData.map((item) => (
                 <li
                   key={item.id}
                   onClick={() => setTransactionId(item.id)}
-                  style={{ cursor: "pointer", padding: "5px" }}
+                  style={{ cursor: "pointer", padding: "5px", textAlign: "start" }}
                 >
                   <Text as="span">
                     {item.time}, {item.company}, R$ {item.value}
@@ -46,7 +47,7 @@ function App() {
               ))}
             </ul>
           </div>
-          <div style={{ backgroundColor: "red", flex: 1 }}>
+          <div style={{ backgroundColor: "red", flex: 1, borderRadius: "8px" }}>
             Detalhamento da transação
             <DetailTransaction id={transactionId} />
           </div>
