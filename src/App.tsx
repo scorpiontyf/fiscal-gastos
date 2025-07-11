@@ -44,7 +44,6 @@ function App() {
                   </Text>
                 </li>
               ))}
-              <li>Hora, Empresa, Valor</li>
             </ul>
           </div>
           <div style={{ backgroundColor: "red", flex: 1 }}>
