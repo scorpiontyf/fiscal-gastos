@@ -14,8 +14,8 @@ function IndexRelatorio() {
   const [transactionId, setTransactionId] = useState<number>(0);
 
   const items = [
-    { label: "Relatório", href: "/" },
-    { label: "Index", href: "/" },
+    { label: "Relatório", href: "/home" },
+    { label: "Index", href: "/home" },
   ];
 
   return (

@@ -89,7 +89,7 @@ export default function CreateRelatorio() {
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">
-        <NavLink to="/" className="text-sm/6 font-semibold text-white-900 button">
+        <NavLink to="/home" className="text-sm/6 font-semibold text-white-900 button">
           Cancelar
         </NavLink>
         <button

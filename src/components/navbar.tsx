@@ -11,7 +11,7 @@ import { Bars3Icon, XMarkIcon, BellIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router";
 
 const navigation = [
-  { name: "Relatório", href: "/", current: false },
+  { name: "Relatório", href: "/home", current: false },
   { name: "Criar", href: "/create", current: false },
   { name: "Projects", href: "/teste", current: false },
   { name: "Calendar", href: "/teste1", current: false },

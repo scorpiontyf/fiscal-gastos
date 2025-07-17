@@ -40,7 +40,7 @@ function DetailTransaction({ id, setTransactionId }: DetailTransactionProps) {
                 <Text as="p">{item.company}</Text>
               </p>
               <div className="flex items-center justify-between">
-                <NavLink onClick={() => setTransactionId(0)} to="/" className="button">
+                <NavLink onClick={() => setTransactionId(0)} to="/home" className="button">
                   Voltar
                 </NavLink>
                 <span className="font-bold text-lg">
