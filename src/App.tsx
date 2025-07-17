@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import Text from "./components/text";
 import DetailTransaction from "./components/detail-transaction";
 import Navbar from "./components/navbar";
 import Table from "./components/table";
@@ -31,7 +30,11 @@ function App() {
             columnGap: "10px",
           }}
         >
-          <Table columns={["", "Horário", "Empresa", "Valor"]} data={mockData}/>
+          <Table
+            setTransactionId={setTransactionId}
+            columns={["", "Horário", "Empresa", "Valor"]}
+            data={mockData}
+          />
           <div style={{ backgroundColor: "#303030", flex: 1, borderRadius: "8px" }}>
             Detalhamento da transação
             <DetailTransaction id={transactionId} />

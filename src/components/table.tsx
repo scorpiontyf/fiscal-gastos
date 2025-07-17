@@ -1,13 +1,15 @@
 import React from "react";
 import type Data from "../types/data";
-import { EyeIcon, EyeDropperIcon } from "@heroicons/react/24/outline";
+import { EyeIcon } from "@heroicons/react/24/outline";
 
 type TableProps = {
   columns: string[];
   data: Data[];
+  setTransactionId: React.Dispatch<React.SetStateAction<number>>;
 };
 
-export default function Table({ columns, data }: TableProps) {
+export default function Table({ columns, data, setTransactionId }: TableProps) {
+  
   return (
     <div className="flex flex-col flex-1 rounded-lg">
       <div className="overflow-x-auto">
@@ -30,7 +32,14 @@ export default function Table({ columns, data }: TableProps) {
                 {data.map((item) => (
                   <tr key={`${item.company}-${item.id}`}>
                     <td className="px-6 py-4 text-sm font-medium text-white whitespace-nowrap">
-                      {item.button ?? <EyeIcon color="white" aria-hidden="true" />}
+                      {
+                        <EyeIcon
+                          color="white"
+                          aria-hidden="true"
+                          className="block size-6 cursor-pointer"
+                          onClick={() => setTransactionId(item.id)}
+                        />
+                      }
                     </td>
                     <td className="px-6 py-4 text-sm font-medium text-white whitespace-nowrap">
                       {new Date().toLocaleTimeString([])}
