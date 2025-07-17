@@ -17,7 +17,7 @@ const navigation = [
   { name: "Calendar", href: "/teste1", current: false },
 ];
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
