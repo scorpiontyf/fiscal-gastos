@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { ShieldExclamationIcon } from "@heroicons/react/24/outline";
+import { NavLink } from "react-router";
 type Inputs = {
   valor: number;
   descricao: string;
@@ -88,12 +89,9 @@ export default function CreateRelatorio() {
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">
-        <button
-          type="button"
-          className="text-sm/6 font-semibold text-white-900"
-        >
+        <NavLink to="/" className="text-sm/6 font-semibold text-white-900 button">
           Cancelar
-        </button>
+        </NavLink>
         <button
           type="submit"
           className="rounded-md bg-indigo-600 px-3 py-2 text-md font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
