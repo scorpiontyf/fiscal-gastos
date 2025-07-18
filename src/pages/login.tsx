@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router";
-
 import { useForm } from "react-hook-form";
 
 type LoginData = {
@@ -15,6 +14,12 @@ function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm<LoginData>();
+  const contaLogada = localStorage.getItem("conta");
+  useEffect(() => {
+    if (contaLogada) {
+      navigate("/home");
+    }
+  }, []);
 
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -36,7 +41,7 @@ function Login() {
               htmlFor="email"
               className="block text-sm/6 font-medium text-white-900"
             >
-              Email 
+              Email
             </label>
             <div className="mt-2">
               <input
@@ -86,6 +91,10 @@ function Login() {
                   data.email === "admin@admin.com" &&
                   data.senha === "admin"
                 ) {
+                  localStorage.setItem(
+                    "conta",
+                    JSON.stringify({ email: data.email, senha: data.senha })
+                  );
                   navigate("/home");
                 }
               })}

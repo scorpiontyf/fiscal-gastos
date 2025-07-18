@@ -8,7 +8,7 @@ import {
   MenuItems,
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon, BellIcon } from "@heroicons/react/24/outline";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 
 const navigation = [
   { name: "Relatório", href: "/home", current: false },
@@ -22,6 +22,13 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
+  const handleSaida = () => {
+    localStorage.removeItem("conta");
+    navigate("/");
+  };
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -116,10 +123,10 @@ export default function Navbar() {
                 </MenuItem>
                 <MenuItem>
                   <a
-                    href="#"
+                    onClick={() => handleSaida()}
                     className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
                   >
-                    Sign out
+                    Sair
                   </a>
                 </MenuItem>
               </MenuItems>
